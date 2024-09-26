@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  # servlet.context-path: /app # чтобы напрямую не обращаться к контроллерам
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/skillbox
+    username: skillbox
+    password: skillbox
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      # ddl-auto: create
+      # ddl-auto: validate
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db.changelog/db.changelog-master.xml
+    enabled: true
+    drop-first: false # перед первым запуском true
+logging:
+  level:
+    ru.java.ru.java.springbootapplication: debug
+app:
+  name: SpringBootApplication
